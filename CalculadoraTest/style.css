@@ -1,0 +1,278 @@
+/* ============================
+   Base
+   ============================ */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #121212;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================
+   Wrapper: painel + calculadora + histórico no centro
+   ============================ */
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* ============================
+   Painel explicativo (esquerda / acima no mobile)
+   ============================ */
+
+.painel-info {
+    flex: 0 0 280px;
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #2d2d44;
+}
+
+.painel-info h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #00ffcc;
+}
+
+.lista-operacoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-operacoes li {
+    padding: 8px 0;
+    border-bottom: 1px solid #2d2d44;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.lista-operacoes li:last-child {
+    border-bottom: none;
+}
+
+.lista-operacoes strong {
+    color: #b8b8d0;
+}
+
+/* ============================
+   Container calculadora + histórico
+   ============================ */
+
+.container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ============================
+   Calculadora
+   ============================ */
+
+.calculadora {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    width: 380px;
+}
+
+.topo {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+/* Botão ON/OFF */
+.btn-onoff {
+    background: #555;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-onoff:hover {
+    background: #666;
+}
+
+.btn-onoff[data-state="on"] {
+    background: #00b894;
+    color: white;
+}
+
+.btn-onoff[data-state="on"]:hover {
+    background: #00d4a3;
+}
+
+.btn-onoff[data-state="off"] {
+    background: #444;
+    color: #888;
+}
+
+/* Display */
+#display {
+    width: calc(100% - 20px);
+    height: 60px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    text-align: right;
+    background: #000;
+    color: #00ffcc;
+}
+
+#display:disabled {
+    background: #1a1a1a;
+    color: #333;
+    cursor: not-allowed;
+}
+
+/* Calculadora desligada: botões desativados */
+.calculadora.off .botoes button {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.calculadora.off .topo .btn-onoff {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Grid de botões */
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.botoes button {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+.botoes button:hover:not(:disabled) {
+    background: #00b894;
+}
+
+.igual {
+    background: #1f1f1f;
+    grid-row: span 2;
+}
+
+.igual:hover:not(:disabled) {
+    background: #181818;
+}
+
+/* ============================
+   Histórico
+   ============================ */
+
+.historico {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+}
+
+.historico.off {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.historico h3 {
+    margin: 0 0 12px 0;
+    font-size: 1rem;
+}
+
+.historico ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.historico li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #00ffcc;
+    font-size: 0.9rem;
+}
+
+.historico li:hover {
+    text-decoration: underline;
+}
+
+.btn-limpar-historico {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #00b894;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-limpar-historico:hover {
+    background: #555;
+}
+
+/* ============================
+   Responsivo: mobile
+   ============================ */
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .painel-info {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculadora {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .historico {
+        width: 100%;
+        max-width: 380px;
+    }
+}

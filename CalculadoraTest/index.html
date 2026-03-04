@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Painel explicativo à esquerda -->
+        <aside class="painel-info">
+            <h2>Operações</h2>
+            <ul class="lista-operacoes">
+                <li><strong>➕ Adição:</strong> Soma dois números.</li>
+                <li><strong>➖ Subtração:</strong> Diminui um número do outro.</li>
+                <li><strong>✖ Multiplicação:</strong> Soma repetida.</li>
+                <li><strong>➗ Divisão:</strong> Distribuição em partes iguais.</li>
+                <li><strong>xʸ Potência:</strong> Eleva um número a outro.</li>
+                <li><strong>√ Raiz:</strong> Número que multiplicado por ele mesmo gera o valor.</li>
+                <li><strong>! Fatorial:</strong> Multiplicação decrescente até 1.</li>
+            </ul>
+        </aside>
+
+        <div class="container">
+            <div class="calculadora">
+                <!-- Botão ligar/desligar no topo -->
+                <div class="topo">
+                    <button type="button" id="btnOnOff" class="btn-onoff" aria-pressed="false">ON/OFF</button>
+                </div>
+
+                <input type="text" id="display" readonly placeholder="" aria-label="Display da calculadora">
+
+                <div class="botoes" id="botoesCalc">
+                    <button type="button" data-action="add" data-val="√(">√</button>
+                    <button type="button" data-action="add" data-val="^">xʸ</button>
+                    <button type="button" data-action="add" data-val="!">x!</button>
+                    <button type="button" data-action="add" data-val="(">(</button>
+
+                    <button type="button" data-action="add" data-val=")">)</button>
+                    <button type="button" data-action="clear">C</button>
+                    <button type="button" data-action="add" data-val="/">÷</button>
+                    <button type="button" data-action="add" data-val="*">×</button>
+
+                    <button type="button" data-action="add" data-val="-">-</button>
+                    <button type="button" data-action="add" data-val="7">7</button>
+                    <button type="button" data-action="add" data-val="8">8</button>
+                    <button type="button" data-action="add" data-val="9">9</button>
+
+                    <button type="button" data-action="add" data-val="+">+</button>
+                    <button type="button" data-action="add" data-val="4">4</button>
+                    <button type="button" data-action="add" data-val="5">5</button>
+                    <button type="button" data-action="add" data-val="6">6</button>
+
+                    <button type="button" data-action="calculate" class="igual">=</button>
+                    <button type="button" data-action="add" data-val="1">1</button>
+                    <button type="button" data-action="add" data-val="2">2</button>
+                    <button type="button" data-action="add" data-val="3">3</button>
+
+                    <button type="button" data-action="add" data-val="0">0</button>
+                    <button type="button" data-action="add" data-val=".">.</button>
+                </div>
+            </div>
+
+            <div class="historico">
+                <h3>Histórico</h3>
+                <ul id="historyList"></ul>
+                <button type="button" id="btnLimparHistorico" class="btn-limpar-historico">Limpar Histórico</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

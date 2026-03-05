@@ -1,0 +1,26 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "description": "Calculadora com testes automatizados (Jest)",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:soma": "jest -t \"Soma\"",
+    "test:subtracao": "jest -t \"Subtração\"",
+    "test:multiplicacao": "jest -t \"Multiplicação\"",
+    "test:divisao": "jest -t \"Divisão\"",
+    "test:potencia": "jest -t \"Potência\"",
+    "test:raiz": "jest -t \"Raiz\"",
+    "test:fatorial": "jest -t \"Fatorial\""
+  },
+  "keywords": ["calculadora", "jest", "testes"],
+  "author": "Erick",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testMatch": ["**/tests/**/*.test.js"],
+    "testEnvironment": "node"
+  }
+}

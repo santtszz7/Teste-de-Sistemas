@@ -1,0 +1,9 @@
+{
+  "name": "teste-de-sistemas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repositório Teste de Sistemas - executar testes do projeto CalculadoraTest",
+  "scripts": {
+    "test": "cd CalculadoraTest && npm test"
+  }
+}

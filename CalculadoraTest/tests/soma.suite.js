@@ -106,4 +106,15 @@ describe("Operação de Soma da Calculadora", () => {
         expect(resultado1).toBe(resultado2);
         expect(resultado1).toBe(37);
     });
+    test("soma com número negativo", () => {
+        // Montagem do cenário: um negativo e um positivo
+        const a = -7;
+        const b = 3;
+
+        // Execução
+        const resultado = somar(a, b);
+
+        // Verificação
+        expect(resultado).toBe(-4);
+    });
 });

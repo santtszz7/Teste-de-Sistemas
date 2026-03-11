@@ -228,6 +228,7 @@ if (typeof module !== "undefined" && module.exports) {
         dividir,
         potencia,
         raiz,
-        fatorial
+        fatorial,
+        evaluate
     };
 }

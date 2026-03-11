@@ -118,4 +118,16 @@ describe("Operação de Multiplicação da Calculadora", () => {
         expect(resultado1).toBe(resultado2);
         expect(resultado1).toBe(143);
     });
+
+    test("multiplicação com números decimais", () => {
+        // Montagem do cenário
+        const a = 2.5;
+        const b = 4.2;
+
+        // Execução
+        const resultado = multiplicar(a, b);
+
+        // Verificação
+        expect(resultado).toBe(10.5);
+    });
 });

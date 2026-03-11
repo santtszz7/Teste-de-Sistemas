@@ -85,4 +85,14 @@ describe("Operação de Raiz Quadrada da Calculadora", () => {
         // Verificação
         expect(resultado).toEqual(2.5);
     });
+    test("raiz quadrada de 49", () => {
+        // Montagem do cenário
+        const a = 49;
+
+        // Execução
+        const resultado = raiz(a);
+
+        // Verificação
+        expect(resultado).toBe(7);
+    });
 });

@@ -104,4 +104,16 @@ describe("Operação de Divisão da Calculadora", () => {
         // Verificação
         expect(resultado).toBe(42);
     });
+
+    test("divisão pelo mesmo número", () => {
+        // Montagem do cenário
+        const a = 42;
+        const b = 42;
+
+        // Execução
+        const resultado = dividir(a, b);
+
+        // Verificação
+        expect(resultado).toBe(1);
+    });
 });

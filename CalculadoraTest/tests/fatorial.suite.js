@@ -96,4 +96,15 @@ describe("Operação de Fatorial da Calculadora", () => {
         // Verificação
         expect(resultado).toBe(479001600);
     });
+
+    test("fatorial de 1", () => {
+        // Montagem do cenário: 1! = 1
+        const n = 1;
+
+        // Execução
+        const resultado = fatorial(n);
+
+        // Verificação
+        expect(resultado).toBe(1);
+    });
 });

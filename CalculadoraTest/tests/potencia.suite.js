@@ -116,4 +116,15 @@ describe("Operação de Potência da Calculadora", () => {
         // Verificação
         expect(resultado).toBe(77);
     });
+    test("potência com dois números negativos", () => {
+        // Montagem do cenário: (-2)^-3 = -0.125
+        const a = -2;
+        const b = -3;
+
+        // Execução
+        const resultado = potencia(a, b);
+
+        // Verificação
+        expect(resultado).toBe(-0.125);
+    });
 });
